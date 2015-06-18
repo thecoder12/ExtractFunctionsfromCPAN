@@ -35,5 +35,14 @@ print "=@array=\n";
 
 
 
-@dirs = grep { -d } @files;
+@dirs = grep { -d } @files; ### get the directories list from bunch of files/directories
+
+@no_dup = grep { !$hash{$_}++ } @array; ## get the non duplicate entries from the array
+
+@errors = grep {  /error/i } @logs; ## get the rows which has error keyword in it.
+
+@true = grep { $_ } @all; ### get all elements from @all except empty string & zero values
+
+
+
 
